@@ -1,24 +1,22 @@
 package example
 
-import com.intellij.openapi.components.ApplicationComponent
-import com.intellij.openapi.ui.Messages
+import com.intellij.openapi.components.ProjectComponent
+import com.intellij.openapi.module.ModuleManager
+import com.intellij.openapi.project.Project
 
-class MyComponent : ApplicationComponent {
+class MyComponent(private val currentProject: Project) : ProjectComponent {
 
-    override fun getComponentName(): String {
-        return "component: idea-plugin-component-init-demo"
-    }
+    override fun projectOpened() {
+        println("> projectOpened")
 
-    override fun disposeComponent() {
-        println("component: disposeComponent")
-    }
+        println("Current project: $currentProject")
 
-    override fun initComponent() {
-        println("component: initComponent when IDEA is starting")
-    }
+        val modules = ModuleManager.getInstance(currentProject).modules
+        println("modules:")
 
-    fun helloInComponent() {
-        Messages.showInfoMessage("Hello from MyComponent", "Hello")
+        modules.forEach { module ->
+            println("${module.name}: ${module.moduleFilePath}")
+        }
     }
 
 }

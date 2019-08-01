@@ -1,6 +1,6 @@
 <idea-plugin>
-    <id>idea-plugin-component-init-demo</id>
-    <name>idea-plugin-component-init-demo</name>
+    <id>idea-plugin-get-modules-of-current-project-demo</id>
+    <name>idea-plugin-get-modules-of-current-project-demo</name>
     <version>1.0</version>
     <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
 
@@ -28,17 +28,10 @@
         <!-- Add your extensions here -->
     </extensions>
 
-    <application-components>
+    <project-components>
         <component>
             <implementation-class>example.MyComponent</implementation-class>
         </component>
-    </application-components>
-
-    <actions>
-        <group id="idea-plugin-component-init-demo.MyPlugin.SampleMenu" text="_Sample Menu" description="Sample menu">
-            <add-to-group group-id="MainMenu" anchor="last"/>
-            <action id="idea-plugin-component-init-demo.action.popup" class="actions.HelloAction" text="_Popup" description="Popup a message"/>
-        </group>
-    </actions>
+    </project-components>
 
 </idea-plugin>
