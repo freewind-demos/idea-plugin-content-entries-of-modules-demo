@@ -1,5 +1,5 @@
-Idea Plugin Get Modules of Current Project Demo
-===============================================
+Idea Plugin Content Entries of Modules Demo
+===========================================
 
 Run plugin in IDEA:
 -------------------
